@@ -3,7 +3,7 @@
 
 用法
 ====
-node index <siteUrl>
+node index.js < siteUrl >
 
 支援網站
 =======
