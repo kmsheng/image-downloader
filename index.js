@@ -105,7 +105,7 @@ var getJquerySelector = function() {
 
 var downloadImagsByHtml = function(html, link) {
 
-    var dir = 'images/' + path.basename(link);
+    var dir = process.env.HOME + '/Pictures/' + path.basename(link);
     mkdirp(dir);
 
     jsdom.env({
