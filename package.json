@@ -10,13 +10,14 @@
   "author": "kmsheng",
   "license": "BSD",
   "dependencies": {
-    "process": "~0.5.1",
-    "url": "~0.7.9",
-    "q": "~0.9.7",
-    "jsdom": "~0.8.9",
-    "iconv-lite": "~0.2.11",
     "bufferhelper": "~0.2.0",
+    "iconv-lite": "~0.2.11",
+    "jsdom": "~0.8.9",
     "mkdirp": "~0.3.5",
-    "path": "~0.4.9"
+    "path": "~0.4.9",
+    "process": "~0.5.1",
+    "q": "~0.9.7",
+    "request": "^2.53.0",
+    "url": "~0.7.9"
   }
 }
