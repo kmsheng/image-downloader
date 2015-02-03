@@ -62,6 +62,9 @@ var getHtmlByUrl = function(siteUrl) {
       var html = iconv.decode(bufferhelper.toBuffer(), 'Big5');
       deferred.resolve(html);
     });
+    res.on('error', function() {
+      deferred.reject();
+    });
   });
 
   return deferred.promise;
