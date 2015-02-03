@@ -78,6 +78,9 @@ var getRegExp = function() {
     case 'beauty.zones.gamebase.com.tw':
       rex = /src="?([^"\s]+(jpg|gif))"/g;
       break;
+    case 'ck101.com':
+      rex = /file="?(http:\/\/s\d+\.imgs.cc[^"\s]+(jpg))"/g;
+      break;
     default:
       throw new Error('unsupported host');
   }
@@ -93,6 +96,8 @@ var getJquerySelector = function() {
       return '.article img';
     case 'beauty.zones.gamebase.com.tw':
       return '.img_group img';
+    case 'ck101.com':
+      return 'img[file]';
     default:
       throw new Error('unsupported host');
   }
@@ -123,7 +128,7 @@ var downloadImagsByHtml = function(html, link) {
           var imgs = $(getJquerySelector());
 
           imgs.each(function(index, img) {
-            imgArr.push(img.src);
+            imgArr.push(img.src || img.file);
           });
         }
 
