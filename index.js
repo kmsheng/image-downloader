@@ -143,7 +143,8 @@ var downloadImagsByHtml = function(html, link) {
           var imgs = $(getJquerySelector());
 
           imgs.each(function(index, img) {
-            imgArr.push(img.src || img.file);
+            var jqImg = $(img);
+            imgArr.push(jqImg.attr('file') || jqImg.attr('src'));
           });
         }
 
