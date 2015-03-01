@@ -115,7 +115,7 @@ var getJquerySelector = function() {
 
 var downloadImagsByHtml = function(html, link) {
 
-    var dir = process.env.HOME + '/Pictures/' + path.basename(link);
+    var dir = process.env.HOME + '/Pictures/';
     mkdirp(dir);
 
     jsdom.env({
@@ -123,7 +123,12 @@ var downloadImagsByHtml = function(html, link) {
       scripts: ['http://code.jquery.com/jquery.js'],
       done: function(err, window) {
 
+        var title = window.document.title;
         var imgArr = [];
+
+        dir += title;
+        mkdirp(dir);
+
 
         if (err) {
           var rex = getRegExp();
