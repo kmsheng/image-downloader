@@ -86,6 +86,9 @@ var getRegExp = function() {
     case 'ck101.com':
       rex = /file="?(http:\/\/s\d+\.imgs.cc[^"\s]+(jpg))"/g;
       break;
+    case 'www.ptt.cc':
+      rex = /src="?([^"\s]+(jpg|gif))"/g;
+      break;
     default:
       throw new Error('unsupported host');
   }
@@ -103,6 +106,8 @@ var getJquerySelector = function() {
       return '.img_group img';
     case 'ck101.com':
       return 'img[file]';
+    case 'www.ptt.cc':
+      return '.richcontent img';
     default:
       throw new Error('unsupported host');
   }
