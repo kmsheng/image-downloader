@@ -60,7 +60,7 @@ var getHtmlByUrl = function(siteUrl) {
       bufferhelper.concat(chunk);
     });
     res.on('end', function() {
-      var html = iconv.decode(bufferhelper.toBuffer(), 'Big5');
+      var html = iconv.decode(bufferhelper.toBuffer(), 'utf8');
       deferred.resolve(html);
     });
     res.on('error', function() {
