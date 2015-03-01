@@ -55,6 +55,7 @@ var getHtmlByUrl = function(siteUrl) {
   };
 
   http.get(options, function(res) {
+
     var bufferhelper = new BufferHelper();
     res.on('data', function(chunk) {
       bufferhelper.concat(chunk);
